@@ -1,0 +1,22 @@
+:root {
+ --sl-color-accent-low:#07343a;
+ --sl-color-accent:#14b8a6;
+ --sl-color-accent-high:#a6f4e6;
+ --sl-content-width:52rem;
+ --sl-text-5xl:clamp(2.1rem,4vw,3.4rem);
+}
+:root[data-theme='light'] {
+ --sl-color-accent-low:#d9faf3;
+ --sl-color-accent:#087f76;
+ --sl-color-accent-high:#064b48;
+}
+html {scroll-behavior:smooth}
+body {font-feature-settings:'ss01' on}
+h1,h2,h3 {letter-spacing:-.025em}
+.sl-markdown-content {line-height:1.8}
+.sl-markdown-content table {font-size:.92rem}
+.expressive-code {margin-block:1.5rem}
+.expressive-code .frame {border-radius:.85rem!important}
+.site-title {font-weight:750;letter-spacing:-.04em}
+.card {border-radius:1rem}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

@@ -1,0 +1,29 @@
+---
+title: drax-wa-js
+description: Conecte, envie mensagens e trabalhe com mídia usando uma biblioteca independente.
+template: splash
+hero:
+  title: Sua intenção vira mensagem.
+  tagline: Uma API central para conexão, mensagens e mídia. Documentação em português, com exemplos práticos e os limites da versão experimental.
+  actions:
+    - text: Começar
+      link: /inicio/instalacao/
+      icon: right-arrow
+    - text: Explorar sendMessage()
+      link: /mensagens/sendmessage/
+      variant: secondary
+---
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid>
+<Card title="Conexão e sessão" icon="setting">Configure o cliente e mantenha as credenciais em um arquivo SQL com extensão .drax. [Configurar conexão](/inicio/conexao/).</Card>
+<Card title="Uma API de envio" icon="approve-check">Texto, mídia e respostas passam por sendMessage(). [Conhecer a API](/mensagens/sendmessage/).</Card>
+<Card title="Mídia de várias origens" icon="document">URL, arquivo, Buffer e streams convergem para a mesma preparação. [Ver fontes](/midia/fontes/).</Card>
+<Card title="Evolução com evidência" icon="pencil">Cada recurso tem limites documentados e validação antes da integração. [Ver compatibilidade](/referencia/versoes/).</Card>
+</CardGrid>
+
+## Antes de começar
+
+Esta documentação acompanha a **0.0.1-alpha.27**. A biblioteca é experimental e a distribuição atual é feita por pacote local `.tgz`. O DraxClient reconecta uma sessão previamente pareada; o fluxo público simplificado de primeiro pareamento ainda precisa ser integrado.
+
+Os exemplos usam destinatários fictícios. Use apenas contas e conversas para as quais você tem autorização.

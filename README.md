@@ -1,8 +1,10 @@
 # Documentação drax-wa-js
 
-Site estático Astro + Starlight, em português. Conteúdo em src/content/docs. Não copie sessões, logs privados ou pacotes da biblioteca para public/.
+[Site oficial](https://drax-wa-js.pages.dev) · [Repositório](https://github.com/rafael-drax-dev/drax-wa-js-docs)
 
-## Trabalhar localmente
+Guias em português para utilizar a API pública da biblioteca. O site utiliza Astro e Starlight, com busca, navegação por categorias, temas claro/escuro e exemplos com botão de copiar.
+
+## Desenvolvimento
 
 ```sh
 npm ci
@@ -11,40 +13,12 @@ npm run build
 npm run preview
 ```
 
-O desenvolvimento e a prévia ficam em 127.0.0.1. O resultado publicável está em dist/. A busca é gerada durante o build; o modo dev não substitui essa verificação.
+O desenvolvimento e a prévia ficam em 127.0.0.1. O build gera dist/ e executa automaticamente a validação dos exemplos e dos links locais. A busca é gerada no build.
 
-## Publicação recomendada: Cloudflare Pages com Git
+## Publicação
 
-1. Crie um repositório no GitHub para o conteúdo desta pasta. Não publique a raiz do projeto nem credenciais.
-2. No Cloudflare Pages, conecte o repositório usando a integração Git.
-3. Nome sugerido: drax-wa-js. Disponibilidade ainda não confirmada.
-4. Build: npm run build. Saída: dist. Node: 22.23.3.
-5. Se o repositório contiver apenas esta pasta, use a raiz padrão. Se usar um monorepo revisado, configure documentacao como diretório raiz.
-6. A integração publica novos commits enviados com git push. Verifique o build antes de enviar.
+O Cloudflare Pages está integrado à branch main deste repositório. Enviar um commit com git push inicia o build e o deploy automático. O comando configurado é npm run build, com saída em dist/.
 
-O endereço será um subdomínio pages.dev atribuído pelo Cloudflare. Não há domínio próprio .dev incluído.
+Execute o build antes do push e acompanhe o check Cloudflare Pages no commit. Um push concluído não garante que o deploy passou.
 
-## Publicação pelo terminal
-
-Depois de instalar/configurar Wrangler e autenticar a conta:
-
-```sh
-npx wrangler login
-npm run deploy
-```
-
-O script compila e envia dist para o projeto drax-wa-js. Confirme o nome real do projeto antes de usá-lo.
-
-Escolha a integração Git ao criar o projeto se quiser deploy automático por push. Um projeto criado como Direct Upload não pode ser convertido depois para integração Git; seria necessário outro projeto. Não execute pages project create sem decidir esse ponto.
-
-## Atualizar a documentação
-
-1. Confirme a API implementada e seus limites.
-2. Atualize a página correspondente e os exemplos.
-3. Atualize referência de versões.
-4. Execute npm run check, npm run build e npm run check:built.
-5. Revise o diff e envie o commit para o repositório conectado.
-
-Uma funcionalidade nova exige alteração explícita na documentação. O deploy automático publica o conteúdo; ele não inventa nem atualiza exemplos sozinho.
-
-A referência pública de versão e métodos está em public/api-contract.json. O empacotamento da biblioteca executa a comparação desse contrato com a implementação. Novos métodos ou propriedades exigem revisão documental. A validação não substitui revisar assinaturas, opções e comportamento.
+Não publique sessões, logs privados ou pacotes da biblioteca. Consulte [CONTRIBUTING.md](CONTRIBUTING.md) para as regras de sincronização entre API, testes, exemplos e documentação.

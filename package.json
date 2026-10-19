@@ -7,7 +7,11 @@
     "dev": "astro dev --host 127.0.0.1",
     "build": "astro build",
     "preview": "astro preview --host 127.0.0.1",
-    "deploy": "npm run build && npx wrangler pages deploy dist --project-name drax-wa-js"
+    "deploy": "npm run build && npx wrangler pages deploy dist --project-name drax-wa-js",
+    "check": "node scripts/check.mjs",
+    "check:built": "node scripts/check.mjs --built",
+    "prebuild": "npm run check",
+    "postbuild": "npm run check:built"
   },
   "dependencies": {
     "@astrojs/starlight": "0.42.6",

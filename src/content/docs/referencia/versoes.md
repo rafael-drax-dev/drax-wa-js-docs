@@ -1,30 +1,37 @@
 ---
-title: Compatibilidade e versões
-description: Recursos confirmados e limites atuais.
+title: Compatibilidade
+description: Versão atual, disponibilidade de recursos e mudanças de API.
 ---
-Esta documentação acompanha **0.0.1-alpha.27**.
+Esta documentação corresponde à **0.0.1-alpha.33**, em pré-lançamento. Organização para produção não significa estabilidade de uma versão 1.0 ou garantia de compatibilidade com mudanças futuras do WhatsApp.
 
-| Recurso | Estado |
-| --- | --- |
-| Reconexão com sessão salva | CONFIRMADO |
-| Persistência SQL .drax e migração | CONFIRMADO |
-| Texto privado e grupo | CONFIRMADO |
-| Imagem, áudio, vídeo e documento | CONFIRMADO em testes live |
-| Resposta citada privada | CONFIRMADO, incluindo validação visual da correção |
-| Visualização única | Envio, wrappers e integridade testados; confirmação visual completa pendente |
-| Primeiro pareamento na API DraxClient | Ainda não integrado |
-| Stickers, contatos, localização e interativos | Ainda não documentados como suportados |
+## Disponível
 
-A suíte de referência da alpha.27 teve **131 testes: 130 aprovados, 0 falhas e 1 live pulado**.
+- Inicialização com ou sem sessão salva.
+- Pareamento por código, restauração e reconexão.
+- Dados de QR com renovação e renderização pela aplicação.
+- Sessão SQL .drax.
+- Texto privado e de grupo.
+- Imagens, áudio, vídeo e documentos.
+- Respostas com citação.
+- Recebimento e download de mídia.
+- Confirmações recebidas de entrega, leitura e reprodução.
+- Logout do companion atual e retorno à autenticação.
 
-## Histórico recente
+## Limites de validação
 
-- alpha.23: persistência SQL.
-- alpha.24: evolução de contexto e citações.
-- alpha.25: expansão de mídia.
-- alpha.26: endurecimento e validações de persistência.
-- alpha.27: correção de citação privada com aliases PN/LID.
+O fluxo completo por código, restauração e recuperação após revogação foram comprovados ao vivo. Para QR, a geração com referências reais e a exibição no terminal foram testadas; a leitura no WhatsApp ainda está pendente.
 
-Uma comparação SQL durante a evolução falhou transitoriamente. A verificação posterior, com filas drenadas e estado canônico estável, passou; a causa exata daquele resultado transitório não foi reproduzida.
+Os envios de visualização única passaram em aceitação e integridade; a apresentação visual completa ainda requer confirmação nos clientes utilizados.
 
-Novos recursos devem entrar aqui somente depois da sequência evidência, teste, integração e validação aplicável. Os estados usados no projeto são CONFIRMADO, OBSERVADO, PROVÁVEL e DESCONHECIDO.
+## Ainda indisponível
+
+Menções, stickers, contatos, localização, mensagens interativas, botões, listas, administração de grupos, chamadas, reações, transcodificação e retry completo não possuem API utilizável documentada nesta versão. Eles não devem ser simulados com campos inventados em sendMessage().
+
+## Mudanças da alpha.33
+
+- Integração principal por `import { DraxClient } from 'drax-wa-js'`.
+- Armazenamento também disponível em `drax-wa-js/store`.
+- Entradas de baixo nível e a antiga classe de descrição de arquitetura foram retiradas da API pública.
+- A documentação passou a acompanhar os exemplos e contratos do consumidor.
+
+Projetos que utilizavam caminhos antigos de pesquisa precisam trocar os imports pelos caminhos acima e remover acesso direto aos arquivos internos.

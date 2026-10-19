@@ -42,7 +42,9 @@ Escolha a integração Git ao criar o projeto se quiser deploy automático por p
 1. Confirme a API implementada e seus limites.
 2. Atualize a página correspondente e os exemplos.
 3. Atualize referência de versões.
-4. Execute npm run build.
+4. Execute npm run check, npm run build e npm run check:built.
 5. Revise o diff e envie o commit para o repositório conectado.
 
 Uma funcionalidade nova exige alteração explícita na documentação. O deploy automático publica o conteúdo; ele não inventa nem atualiza exemplos sozinho.
+
+A referência pública de versão e métodos está em public/api-contract.json. O empacotamento da biblioteca executa a comparação desse contrato com a implementação. Novos métodos ou propriedades exigem revisão documental. A validação não substitui revisar assinaturas, opções e comportamento.

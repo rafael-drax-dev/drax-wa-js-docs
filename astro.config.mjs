@@ -4,7 +4,7 @@ export default defineConfig({
  output:'static',
  integrations:[starlight({
   title:'drax-wa-js',
-  description:'Documentação da biblioteca independente drax-wa-js: conexão, SQL, mensagens e mídia.',
+  description:'Conecte sua aplicação com a drax-wa-js. Guias de autenticação, sessão persistente, mensagens e mídia.',
   locales:{root:{label:'Português',lang:'pt-BR'}},
   customCss:['./src/styles/custom.css'],
   favicon:'/favicon.svg',
@@ -17,12 +17,17 @@ export default defineConfig({
    {label:'Conexão e sessão',items:[
     {label:'Configurar o cliente',slug:'conexao/configuracao'},
     {label:'Armazenamento .drax',slug:'conexao/armazenamento'},
-    {label:'Pareamento: estado atual',slug:'conexao/pareamento'}
+    {label:'Código de pareamento',slug:'conexao/pareamento'},
+    {label:'QR Code no terminal',slug:'conexao/qr'},
+    {label:'Eventos e estados',slug:'conexao/eventos'},
+    {label:'Encerrar e desconectar',slug:'conexao/encerramento'}
    ]},
    {label:'Mensagens',items:[
     {label:'sendMessage()',slug:'mensagens/sendmessage'},
     {label:'Texto',slug:'mensagens/texto'},
-    {label:'Responder com citação',slug:'mensagens/citacoes'}
+    {label:'Responder com citação',slug:'mensagens/citacoes'},
+    {label:'Receber mensagens',slug:'mensagens/recebimento'},
+    {label:'Confirmações de entrega',slug:'mensagens/confirmacoes'}
    ]},
    {label:'Mídia',items:[
     {label:'Fontes e limites',slug:'midia/fontes'},
@@ -34,6 +39,7 @@ export default defineConfig({
     {label:'Receber e baixar mídia',slug:'midia/recebimento'}
    ]},
    {label:'Referência',items:[
+    {label:'API do cliente',slug:'referencia/cliente'},
     {label:'Erros e diagnóstico',slug:'referencia/erros'},
     {label:'Compatibilidade e versões',slug:'referencia/versoes'}
    ]}

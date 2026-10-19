@@ -1,6 +1,6 @@
 ---
 title: Documentos
-description: Envie arquivos como documentos.
+description: Envie arquivos com nome e MIME.
 ---
 ```js
 await client.sendMessage(jid, {
@@ -10,4 +10,6 @@ await client.sendMessage(jid, {
 });
 ```
 
-O MIME declarado precisa ser compatível com o conteúdo. Documentos não aceitam viewOnce na implementação atual.
+`fileName` define o nome enviado ao destinatário. O MIME informado é confrontado com o conteúdo quando ele puder ser identificado.
+
+Documentos não aceitam `viewOnce` nesta versão. Para origens remotas ou streams, use o mesmo campo `document` com uma [fonte suportada](/midia/fontes/).

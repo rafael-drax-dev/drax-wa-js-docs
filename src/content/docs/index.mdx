@@ -1,29 +1,48 @@
 ---
-title: drax-wa-js
-description: Conecte, envie mensagens e trabalhe com mídia usando uma biblioteca independente.
-template: splash
-hero:
-  title: Sua intenção vira mensagem.
-  tagline: Uma API central para conexão, mensagens e mídia. Documentação em português, com exemplos práticos e os limites da versão experimental.
-  actions:
-    - text: Começar
-      link: /inicio/instalacao/
-      icon: right-arrow
-    - text: Explorar sendMessage()
-      link: /mensagens/sendmessage/
-      variant: secondary
+title: Integre o WhatsApp à sua aplicação.
+description: Guia da drax-wa-js para conectar, receber mensagens e enviar texto ou mídia.
 ---
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+<div className="docs-intro">
+<p className="eyebrow">DRAX-WA-JS · JAVASCRIPT · NODE.JS</p>
+<p className="intro-lead">Conexão persistente. Mensagens com contexto. Mídia de várias origens. Uma API para expressar o que sua aplicação precisa enviar.</p>
+<div className="intro-actions">
+<a className="action-primary" href="/inicio/instalacao/">Começar a integração <span aria-hidden="true">→</span></a>
+<a className="action-secondary" href="/mensagens/sendmessage/">Explorar a API</a>
+</div>
+</div>
+
+```js title="Sua primeira mensagem"
+import { DraxClient } from 'drax-wa-js';
+
+// Depois de conectar e aguardar o evento ready:
+await client.sendMessage(jid, { text: 'Olá!' });
+
+await client.sendMessage(jid, {
+  image: { url: 'https://seu-site.com/foto.jpg' },
+  caption: 'Enviado pela minha aplicação',
+});
+```
+
+## Um caminho claro, do início ao envio
 
 <CardGrid>
-<Card title="Conexão e sessão" icon="setting">Configure o cliente e mantenha as credenciais em um arquivo SQL com extensão .drax. [Configurar conexão](/inicio/conexao/).</Card>
-<Card title="Uma API de envio" icon="approve-check">Texto, mídia e respostas passam por sendMessage(). [Conhecer a API](/mensagens/sendmessage/).</Card>
-<Card title="Mídia de várias origens" icon="document">URL, arquivo, Buffer e streams convergem para a mesma preparação. [Ver fontes](/midia/fontes/).</Card>
-<Card title="Evolução com evidência" icon="pencil">Cada recurso tem limites documentados e validação antes da integração. [Ver compatibilidade](/referencia/versoes/).</Card>
+<LinkCard title="01 · Instale" description="Prepare o Node.js e instale o pacote da versão atual." href="/inicio/instalacao/" />
+<LinkCard title="02 · Conecte" description="Escolha código ou QR e restaure a sessão nas próximas inicializações." href="/inicio/conexao/" />
+<LinkCard title="03 · Envie" description="Use texto, mídia e respostas com a mesma interface." href="/mensagens/sendmessage/" />
+<LinkCard title="04 · Receba" description="Trabalhe com mensagens, downloads e confirmações." href="/mensagens/recebimento/" />
 </CardGrid>
 
-## Antes de começar
+## Escolha o que sua aplicação precisa
 
-Esta documentação acompanha a **0.0.1-alpha.27**. A biblioteca é experimental e a distribuição atual é feita por pacote local `.tgz`. O DraxClient reconecta uma sessão previamente pareada; o fluxo público simplificado de primeiro pareamento ainda precisa ser integrado.
+<CardGrid>
+<Card title="Sessão persistente" icon="setting">Configure um arquivo `.drax`. A biblioteca restaura a conexão ou solicita autenticação quando necessário. [Configurar cliente](/conexao/configuracao/).</Card>
+<Card title="Mídia sem preparação manual" icon="document">URL, arquivo, bytes ou stream: a biblioteca resolve a origem e prepara o envio. [Ver fontes](/midia/fontes/).</Card>
+<Card title="Respostas com contexto" icon="comment">Passe a mensagem recebida em `quoted`. [Responder uma mensagem](/mensagens/citacoes/).</Card>
+<Card title="Controle do ciclo de vida" icon="approve-check">Acompanhe eventos, trate falhas e encerre corretamente. [Ver eventos](/conexao/eventos/).</Card>
+</CardGrid>
 
-Os exemplos usam destinatários fictícios. Use apenas contas e conversas para as quais você tem autorização.
+:::note[Versão desta documentação]
+**0.0.1-alpha.33**, em pré-lançamento. Os exemplos usam a API pública atual. Consulte [compatibilidade](/referencia/versoes/) para conhecer os limites de cada recurso.
+:::

@@ -1,0 +1,26 @@
+{
+  "version": "0.0.1-alpha.33",
+  "exports": [
+    "DRAX_WA_JS_VERSION",
+    "DraxClient",
+    "MediaError",
+    "SessionStoreError",
+    "SqliteSessionStore"
+  ],
+  "methods": [
+    "connect",
+    "waitUntilReady",
+    "requestPairingCode",
+    "status",
+    "sendMessage",
+    "sendText",
+    "resolveRecipient",
+    "downloadMedia",
+    "close",
+    "logout"
+  ],
+  "properties": [
+    "ready",
+    "isPaired"
+  ]
+}

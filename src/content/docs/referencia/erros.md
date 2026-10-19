@@ -1,17 +1,34 @@
 ---
-title: Erros e diagnóstico
-description: Trate falhas sem perder a sessão.
+title: Tratar erros
+description: Combine try/catch e eventos para tratar falhas previsíveis.
 ---
-Separe falhas de conexão, sessão, resolução da origem, preparação, upload e envio. Use try/catch e preserve a causa original ao registrar um erro.
+```js
+try {
+  await client.sendMessage(jid, { image: { url } });
+} catch (error) {
+  console.error(error.code ?? error.name, error.message);
+}
+```
 
-Não apague credenciais para resolver automaticamente uma falha de rede. Não reinicialize sessões Signal existentes: isso pode destruir ratchets válidas.
+Além das Promises, acompanhe `client:error`, `transport:error`, `message:error`, `warning` e `failure`. Registre somente o contexto necessário; não registre sessões ou dados de autenticação completos.
 
-## ACK e receipts
+| Código | O que verificar |
+| --- | --- |
+| `ERR_STORE_CONFIG`, `ERR_STORE_PATH` | Configuração e extensão .drax |
+| `ERR_STORE_OPEN`, `ERR_STORE_READ`, `ERR_STORE_WRITE` | Acesso e disponibilidade do armazenamento |
+| `ERR_STORE_CREDENTIALS`, `ERR_STORE_INTEGRITY`, `ERR_STORE_SCHEMA` | Validade dos dados ou formato |
+| `ERR_STORE_CONFLICT` | Outra instância gravou na mesma sessão |
+| `ERR_PAIRING_MODE`, `ERR_ALREADY_PAIRED` | Método e situação da autenticação |
+| `ERR_PAIRING_TIMEOUT`, `ERR_PAIRING_REJECTED` | Solicitação de código |
+| `ERR_QR_EXPIRED`, `ERR_AUTH_TIMEOUT` | Autenticação não concluída no prazo |
+| `ERR_CONNECTION_CANCELLED` | Inicialização cancelada |
+| `ERR_MESSAGE_CONTENT`, `ERR_MESSAGE_UNSUPPORTED` | Conteúdo ou tipo não aceito |
+| `ERR_MESSAGE_REJECTED` | Servidor rejeitou a mensagem; observe `serverCode` |
+| `ERR_MEDIA_URL`, `ERR_MEDIA_SSRF` | Origem ou destino bloqueado |
+| `ERR_MEDIA_SIZE`, `ERR_MEDIA_TIMEOUT` | Limites de tamanho ou tempo |
+| `ERR_MEDIA_TYPE`, `ERR_MEDIA_MIME` | Conteúdo incompatível ou MIME conflitante |
+| `ERR_NOT_READY`, `ERR_LOGOUT_REJECTED` | Estado do cliente ou rejeição ao desvincular |
 
-ACK positivo significa aceitação pelo servidor. O evento receipt fornece estados como delivered, read e played, quando recebidos. Nenhum desses sinais substitui todos os demais.
+Nem todo erro atual possui `code`; trate também `TypeError`, `RangeError`, `name` e `message`. Não dependa de comparar o texto exato de mensagens de erro.
 
-Retry completo continua sendo uma área de evolução; não suponha reenvio automático ilimitado.
-
-## Logs seguros
-
-Não registre chaves, tokens, sessões completas ou conteúdo privado. Ao reportar um problema, informe versão, operação, erro e contexto mínimo, removendo dados pessoais.
+Reenvios devem ser controlados pela aplicação: repetir um envio após timeout pode duplicá-lo se o servidor já o tiver aceitado.

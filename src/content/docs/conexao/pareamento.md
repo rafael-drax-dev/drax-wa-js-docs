@@ -1,9 +1,37 @@
 ---
-title: "Pareamento: estado atual"
-description: O que já foi comprovado e o que falta na API pública.
+title: Código de pareamento
+description: Autentique uma conta sem precisar de uma segunda tela.
 ---
-**CONFIRMADO:** o pareamento por código, pair-success, persistência e reconexão autenticada foram comprovados no desenvolvimento do protocolo.
+Configure `auth.method: 'code'` e solicite o código após `auth:required`.
 
-**Limite da API atual:** o DraxClient de alto nível reconecta credenciais existentes. Não está documentado um método público para iniciar o primeiro pareamento.
+```js
+const client = new DraxClient({
+  storage: { path: './sessions/session.drax' },
+  auth: { method: 'code' },
+});
 
-Não use exemplos de outras bibliotecas como se fossem métodos da drax-wa-js. A futura integração de pareamento deverá reutilizar o gerenciamento de conexão e o armazenamento .drax.
+client.on('auth:required', () => {
+  client.requestPairingCode(phoneNumber)
+    .catch(error => console.error(error.code, error.message));
+});
+
+client.on('pairing-code', ({ code }) => {
+  console.log('Código:', code);
+});
+
+await client.connect();
+```
+
+Para o exemplo completo com encerramento e proteção contra solicitações simultâneas, veja [seu primeiro cliente](/inicio/conexao/).
+
+## requestPairingCode(phoneNumber, options)
+
+- `phoneNumber`: string com 7 a 15 dígitos, incluindo código do país.
+- `options.timeoutMs`: prazo da solicitação; padrão de 20.000 ms.
+- Retorno: `Promise<string>`, com um código de oito caracteres.
+
+Uma sessão já pareada não deve solicitar outro código. Nesse caso, a operação rejeita com `ERR_ALREADY_PAIRED`.
+
+O evento `paired` indica que o pareamento foi configurado. Aguarde **`ready`** para enviar mensagens. A conexão pode reiniciar automaticamente entre essas etapas.
+
+O pareamento por código e a restauração posterior foram validados ao vivo.

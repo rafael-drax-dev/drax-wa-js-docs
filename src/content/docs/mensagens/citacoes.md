@@ -1,27 +1,27 @@
 ---
 title: Responder com citação
-description: Vincule uma resposta a uma mensagem recebida.
+description: Passe a mensagem recebida para vincular uma resposta à conversa.
 ---
-Passe a mensagem normalizada recebida no evento message como quoted:
-
 ```js
-client.on('message', async (message) => {
-  if (message.text !== 'DRAX-PERGUNTA') return;
+client.on('message', async message => {
+  if (message.text !== '/ajuda') return;
 
   try {
     await client.sendMessage(message.chat, {
-      text: 'Esta é a resposta.',
+      text: 'Como posso ajudar?',
     }, {
       quoted: message,
     });
   } catch (error) {
-    console.error('Falha ao responder:', error);
+    console.error('Falha ao responder:', error.message);
   }
 });
 ```
 
-A referência precisa preservar os dados da mensagem, incluindo id, chat, author e decoded. Não substitua a mensagem completa por um texto ou apenas pelo ID.
+Passe o objeto recebido no evento `message`, sem substituí-lo apenas pelo ID ou texto. Ele contém a referência necessária para construir a citação.
 
-Responder com citação e mencionar um usuário são operações diferentes. A opção quoted cria a resposta vinculada; ela não é uma API de menções.
+O mesmo padrão é usado no privado e em grupo. Para citar posteriormente, preserve os dados da mensagem recebida na aplicação.
 
-Na alpha.27, a normalização considera aliases PN/LID da mesma conversa privada, evitando emitir remoteJid desnecessariamente. A correção foi confirmada visualmente no privado; o comportamento em grupo foi preservado.
+**Responder com citação não é mencionar alguém.** A opção `quoted` está disponível; uma API de `mentions` ainda não está implementada.
+
+Evite criar respostas automáticas sem regras de acesso ou limitação de frequência. O código acima responde apenas ao texto exato `/ajuda`.

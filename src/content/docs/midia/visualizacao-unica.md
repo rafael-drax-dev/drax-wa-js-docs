@@ -1,18 +1,28 @@
 ---
 title: Visualização única
-description: Use o mesmo pipeline de mídia com viewOnce.
+description: Utilize viewOnce com os tipos de mídia suportados.
 ---
+## Imagem
+
 ```js
 await client.sendMessage(jid, {
   image: { path: './foto.jpg' },
   viewOnce: true,
 });
+```
 
+## Vídeo
+
+```js
 await client.sendMessage(jid, {
   video: { path: './video.mp4' },
   viewOnce: true,
 });
+```
 
+## Nota de voz
+
+```js
 await client.sendMessage(jid, {
   audio: { path: './voz.ogg' },
   ptt: true,
@@ -20,8 +30,6 @@ await client.sendMessage(jid, {
 });
 ```
 
-São suportados imagem, vídeo e nota de voz Ogg/Opus. Documento e áudio comum sem ptt não são aceitos nesse modo.
+Documento e áudio comum sem `ptt` não são aceitos nesse modo. A nota de voz precisa usar conteúdo Ogg/Opus.
 
-O recurso reutiliza resolução, preparação, criptografia e upload de mídia. Os wrappers são interpretados no recebimento pelo fluxo geral.
-
-Os envios foram aceitos em testes de protocolo, com download e integridade verificados. A apresentação visual depende também do cliente WhatsApp; esse teste não equivale a prometer suporte a formatos futuros nem a impedir cópias por outros meios.
+Esses envios foram aceitos nos testes, com download e integridade conferidos. A confirmação visual completa de abertura única em todos os clientes ainda está pendente. Não interprete esse recurso como garantia de impossibilidade de cópia do conteúdo.

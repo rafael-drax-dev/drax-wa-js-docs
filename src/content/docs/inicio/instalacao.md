@@ -1,33 +1,39 @@
 ---
 title: Instalação
-description: Prepare o ambiente e instale o pacote da biblioteca.
+description: Requisitos e instalação da distribuição atual.
 ---
-Use **Node.js 22.13 ou superior** e npm. O armazenamento utiliza SQLite nativo do Node.
+## Requisitos
 
-## Gerar o pacote
+- Node.js **22.13 ou superior**.
+- Projeto configurado como ES Module.
+- Acesso de rede ao WhatsApp.
 
-Na pasta do código da biblioteca:
-```sh
-npm ci
-npm test
-npm pack
-```
+## Instalar o pacote
 
-## Instalar no projeto consumidor
+A distribuição atual é um arquivo `.tgz`. Não há publicação no registro npm confirmada nesta etapa.
 
 ```sh
 mkdir meu-bot
 cd meu-bot
 npm init -y
 npm pkg set type=module
-npm install /caminho/drax-wa-js-0.0.1-alpha.27.tgz
+npm install /caminho/drax-wa-js-0.0.1-alpha.33.tgz
 ```
 
-O caminho é um exemplo: substitua pela localização real do pacote. Não há nesta etapa uma publicação pública no npm confirmada. A instalação deve copiar o pacote para node_modules, sem depender de um link para o código-fonte.
+Substitua o caminho pela localização do pacote recebido. A instalação copia a biblioteca para `node_modules`.
 
 ```js
-import { DraxClient } from 'drax-wa-js/experimental/core';
-console.log(typeof DraxClient); // function
+import { DraxClient, DRAX_WA_JS_VERSION } from 'drax-wa-js';
+
+console.log(DRAX_WA_JS_VERSION);
 ```
 
-Continue em [Primeira conexão](/inicio/conexao/).
+Caso você tenha o código-fonte da biblioteca, gere a distribuição com:
+
+```sh
+npm ci
+npm test
+npm pack
+```
+
+Continue com [seu primeiro cliente](/inicio/conexao/). Não importe arquivos de `src/` do pacote: use as entradas públicas.

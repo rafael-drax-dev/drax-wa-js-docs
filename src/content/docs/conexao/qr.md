@@ -19,23 +19,46 @@ const client = new DraxClient({
   auth: { method: 'qr' },
 });
 
-client.on('qr', ({ data, expiresAt }) => {
-  QRCode.toString(data, { type: 'terminal', small: true })
-    .then(text => {
+let closing;
+const subscription = client.events.subscribe({
+  qr: async ({ data, expiresAt }) => {
+    const text = await QRCode.toString(data, { type: 'terminal', small: true });
+    if (!closing) {
       console.log(text);
       console.log('Exibição válida até:', new Date(expiresAt).toLocaleTimeString());
-    })
-    .catch(error => console.error('QR:', error.message));
+    }
+  },
+  ready: () => console.log('Cliente pronto.'),
+  'client:error': error => console.error(error.code, error.message),
+  'transport:error': error => console.error(error.message),
+}, {
+  onError: (error, { event }) => console.error(event, error.cause ?? error),
 });
 
-client.on('ready', () => console.log('Cliente pronto.'));
-client.on('client:error', error => console.error(error.code, error.message));
-client.on('transport:error', error => console.error(error.message));
+const close = () => closing ??= (async () => {
+  try {
+    await client.close();
+  } finally {
+    subscription.unsubscribe();
+    await subscription.drain();
+  }
+})();
 
-process.once('SIGINT', () => { void client.close(); });
-process.once('SIGTERM', () => { void client.close(); });
+const shutdown = () => {
+  close().catch(error => {
+    console.error('Encerramento:', error);
+    process.exitCode = 1;
+  });
+};
+process.once('SIGINT', shutdown);
+process.once('SIGTERM', shutdown);
 
-await client.connect();
+try {
+  await client.connect();
+} catch (error) {
+  await close();
+  if (error.code !== 'ERR_CONNECTION_CANCELLED') throw error;
+}
 ```
 
 A biblioteca emite novas referências enquanto elas estiverem disponíveis. Renderize cada novo evento; não continue mostrando um QR anterior.

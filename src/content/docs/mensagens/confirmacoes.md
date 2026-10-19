@@ -4,10 +4,14 @@ description: Diferencie aceitação, entrega, leitura e reprodução.
 ---
 ```js
 // Registre antes dos envios. Persista as confirmações por ID na sua aplicação.
-client.on('receipt', receipt => {
-  for (const id of receipt.messageIds) {
-    console.log('Mensagem:', id, 'estado:', receipt.status);
+const subscription = client.events.subscribe({
+  'receipt': receipt => {
+    for (const id of receipt.messageIds) {
+      console.log('Mensagem:', id, 'estado:', receipt.status);
+    }
   }
+}, {
+  onError: (error, { event }) => console.error('Falha no handler:', event, error.cause ?? error),
 });
 
 const sent = await client.sendMessage(jid, { text: 'Olá!' });

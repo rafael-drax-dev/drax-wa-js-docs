@@ -21,37 +21,51 @@ const client = new DraxClient({
   auth: { method: 'code' },
 });
 
-let pairingRequest = null;
-
-client.on('auth:required', () => {
-  if (pairingRequest) return;
-  pairingRequest = client.requestPairingCode(phoneNumber)
-    .catch(error => console.error('Autenticação:', error.message))
-    .finally(() => { pairingRequest = null; });
-});
-
-client.on('pairing-code', ({ code }) => {
-  console.log('Código:', code);
-});
-
-client.on('ready', () => console.log('Cliente pronto.'));
-client.on('message', message => {
-  console.log('Mensagem recebida:', message.type);
-});
-client.on('client:error', error => console.error(error.code, error.message));
-client.on('transport:error', error => console.error(error.message));
-
+let pairingRequest;
 let closing;
-const close = () => closing ??= client.close();
-process.once('SIGINT', () => { void close(); });
-process.once('SIGTERM', () => { void close(); });
 
-try {
-  await client.connect();
-} catch (error) {
-  await close();
-  if (error.code !== 'ERR_CONNECTION_CANCELLED') throw error;
-}
+const subscription = client.events.subscribe({
+  'auth:required': () => {
+      if (pairingRequest) return;
+      return pairingRequest = client.requestPairingCode(phoneNumber)
+        .finally(() => { pairingRequest = undefined; });
+    },
+    'pairing-code': ({ code }) => console.log('Código:', code),
+    ready: () => console.log('Cliente pronto.'),
+    message: message => console.log('Mensagem recebida:', message.type),
+    'client:error': error => console.error(error.code, error.message),
+    'transport:error': error => console.error(error.message),
+  }, {
+    onError: (error, { event }) => {
+      if (closing && error.cause?.code === 'ERR_PAIRING_CANCELLED') return;
+      console.error('Handler:', event, error.cause ?? error);
+    },
+  });
+
+  const close = () => closing ??= (async () => {
+    try {
+      await client.close();
+    } finally {
+      subscription.unsubscribe();
+      await subscription.drain({ timeoutMs: 30_000 });
+    }
+  })();
+
+  const shutdown = () => {
+    close().catch(error => {
+      console.error('Encerramento:', error);
+      process.exitCode = 1;
+    });
+  };
+  process.once('SIGINT', shutdown);
+  process.once('SIGTERM', shutdown);
+
+  try {
+    await client.connect();
+  } catch (error) {
+    await close();
+    if (error.code !== 'ERR_CONNECTION_CANCELLED') throw error;
+  }
 ```
 
 Execute usando o número da conta que deseja conectar:

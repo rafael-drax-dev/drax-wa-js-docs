@@ -32,4 +32,4 @@ await client.sendMessage(jid, {
 
 Documento e áudio comum sem `ptt` não são aceitos nesse modo. A nota de voz precisa usar conteúdo Ogg/Opus.
 
-Esses envios foram aceitos nos testes, com download e integridade conferidos. A confirmação visual completa de abertura única em todos os clientes ainda está pendente. Não interprete esse recurso como garantia de impossibilidade de cópia do conteúdo.
+Esses envios foram aceitos nos testes, com download e integridade conferidos. O proprietário confirmou o funcionamento visual nos testes realizados; isso não representa validação universal de todos os clientes WhatsApp. Não interprete esse recurso como garantia de impossibilidade de cópia do conteúdo.

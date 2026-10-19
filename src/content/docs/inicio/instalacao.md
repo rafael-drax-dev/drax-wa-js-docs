@@ -17,7 +17,7 @@ mkdir meu-bot
 cd meu-bot
 npm init -y
 npm pkg set type=module
-npm install /caminho/drax-wa-js-0.0.1-alpha.33.tgz
+npm install /caminho/drax-wa-js-0.0.1-alpha.34.tgz
 ```
 
 Substitua o caminho pela localização do pacote recebido. A instalação copia a biblioteca para `node_modules`.

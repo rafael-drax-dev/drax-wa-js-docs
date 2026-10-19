@@ -3,19 +3,23 @@ title: Receber e baixar mídia
 description: Baixe o conteúdo de uma mensagem recebida.
 ---
 ```js
-client.on('message', async message => {
-  if (!message.media) return;
+const subscription = client.events.subscribe({
+  'message': async message => {
+    if (!message.media) return;
 
-  try {
-    const result = await client.downloadMedia(message.media, {
-      maxEncryptedBytes: 30 * 1024 * 1024,
-      timeoutMs: 30_000,
-    });
+    try {
+      const result = await client.downloadMedia(message.media, {
+        maxEncryptedBytes: 30 * 1024 * 1024,
+        timeoutMs: 30_000,
+      });
 
-    console.log('Bytes disponíveis:', result.plaintext.length);
-  } catch (error) {
-    console.error('Download:', error.code, error.message);
+      console.log('Bytes disponíveis:', result.plaintext.length);
+    } catch (error) {
+      console.error('Download:', error.code, error.message);
+    }
   }
+}, {
+  onError: (error, { event }) => console.error('Falha no handler:', event, error.cause ?? error),
 });
 ```
 

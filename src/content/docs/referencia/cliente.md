@@ -35,7 +35,7 @@ A entrada principal e `/store` são os caminhos públicos. Arquivos internos do 
 
 `ready` e `isPaired` são propriedades booleanas de leitura. Estar pareado não significa que a conexão já está pronta.
 
-Os métodos de eventos, como `on()`, `once()` e `off()`, são herdados de EventEmitter.
+`events` é o gerenciador de inscrições. Use `events.subscribe(handlers, options)` e consulte os nomes em `events.names`. Veja [eventos](/conexao/eventos/). Os métodos herdados de EventEmitter (`on()`, `once()`, `off()`) permanecem disponíveis para compatibilidade; não oferecem a captura gerenciada de falhas.
 
 ## Armazenamento e erros
 

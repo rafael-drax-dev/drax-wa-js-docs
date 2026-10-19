@@ -32,6 +32,12 @@ if(process.argv.includes('--library')){
  const methods=Object.keys(descriptors).filter(k=>k!=='constructor'&&typeof descriptors[k].value==='function').sort();
  const props=Object.keys(descriptors).filter(k=>descriptors[k].get).sort();
  assert.deepEqual(methods,[...contract.methods].sort());assert.deepEqual(props,[...contract.properties].sort());
+ const {EventEmitter}=await import('node:events');
+ const sample=new api.DraxClient({connection:new EventEmitter()});
+ const eventDescriptors=Object.getOwnPropertyDescriptors(Object.getPrototypeOf(sample.events));
+ assert.deepEqual(Object.keys(eventDescriptors).filter(k=>k!=='constructor'&&typeof eventDescriptors[k].value==='function').sort(),contract.eventManager.methods);
+ assert.deepEqual(Object.keys(eventDescriptors).filter(k=>eventDescriptors[k].get).sort(),contract.eventManager.properties);
+ for(const name of sample.events.names)assert(texts.some(s=>s.includes('`'+name+'`')),'Evento sem documentação: '+name);
  assert.deepEqual(Object.keys(pkg.exports).sort(),['.','./store']);
 }
 if(process.argv.includes('--built')){

@@ -10,13 +10,15 @@ const client = new DraxClient({
   auth: { method: 'code' },
 });
 
-client.on('auth:required', () => {
-  client.requestPairingCode(phoneNumber)
-    .catch(error => console.error(error.code, error.message));
-});
-
-client.on('pairing-code', ({ code }) => {
-  console.log('Código:', code);
+const subscription = client.events.subscribe({
+  'auth:required': () => {
+    return client.requestPairingCode(phoneNumber);
+  },
+  'pairing-code': ({ code }) => {
+    console.log('Código:', code);
+  }
+}, {
+  onError: (error, { event }) => console.error('Falha no handler:', event, error.cause ?? error),
 });
 
 await client.connect();

@@ -3,15 +3,19 @@ title: Receber mensagens
 description: Use o evento message e os campos normalizados.
 ---
 ```js
-client.on('message', message => {
-  console.log({
-    id: message.id,
-    chat: message.chat,
-    author: message.author,
-    type: message.type,
-    text: message.text,
-    timestamp: message.timestamp,
-  });
+const subscription = client.events.subscribe({
+  'message': message => {
+    console.log({
+      id: message.id,
+      chat: message.chat,
+      author: message.author,
+      type: message.type,
+      text: message.text,
+      timestamp: message.timestamp,
+    });
+  }
+}, {
+  onError: (error, { event }) => console.error('Falha no handler:', event, error.cause ?? error),
 });
 ```
 
@@ -30,8 +34,12 @@ O objeto recebido deve ser preservado ao usar [quoted](/mensagens/citacoes/). Pa
 ## Falhas de processamento
 
 ```js
-client.on('message:error', error => {
-  console.error('Mensagem não processada:', error.message);
+const subscription = client.events.subscribe({
+  'message:error': error => {
+    console.error('Mensagem não processada:', error.message);
+  }
+}, {
+  onError: (error, { event }) => console.error('Falha no handler:', event, error.cause ?? error),
 });
 ```
 

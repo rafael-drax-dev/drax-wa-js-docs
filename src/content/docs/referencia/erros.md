@@ -21,6 +21,9 @@ Além das Promises, acompanhe `client:error`, `transport:error`, `message:error`
 | `ERR_PAIRING_MODE`, `ERR_ALREADY_PAIRED` | Método e situação da autenticação |
 | `ERR_PAIRING_TIMEOUT`, `ERR_PAIRING_REJECTED` | Solicitação de código |
 | `ERR_QR_EXPIRED`, `ERR_AUTH_TIMEOUT` | Autenticação não concluída no prazo |
+| `ERR_EVENTS_CONFIG` | Mapa de eventos, handler ou opção inválidos |
+| `ERR_EVENT_HANDLER`, `ERR_EVENT_ERROR_HANDLER` | Falha no callback da aplicação ou no seu onError |
+| `ERR_EVENT_OVERFLOW`, `ERR_EVENTS_DRAIN_TIMEOUT` | Concorrência ou encerramento dos handlers |
 | `ERR_CONNECTION_CANCELLED` | Inicialização cancelada |
 | `ERR_MESSAGE_CONTENT`, `ERR_MESSAGE_UNSUPPORTED` | Conteúdo ou tipo não aceito |
 | `ERR_MESSAGE_REJECTED` | Servidor rejeitou a mensagem; observe `serverCode` |

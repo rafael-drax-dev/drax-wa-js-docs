@@ -3,18 +3,22 @@ title: Responder com citação
 description: Passe a mensagem recebida para vincular uma resposta à conversa.
 ---
 ```js
-client.on('message', async message => {
-  if (message.text !== '/ajuda') return;
+const subscription = client.events.subscribe({
+  'message': async message => {
+    if (message.text !== '/ajuda') return;
 
-  try {
-    await client.sendMessage(message.chat, {
-      text: 'Como posso ajudar?',
-    }, {
-      quoted: message,
-    });
-  } catch (error) {
-    console.error('Falha ao responder:', error.message);
+    try {
+      await client.sendMessage(message.chat, {
+        text: 'Como posso ajudar?',
+      }, {
+        quoted: message,
+      });
+    } catch (error) {
+      console.error('Falha ao responder:', error.message);
+    }
   }
+}, {
+  onError: (error, { event }) => console.error('Falha no handler:', event, error.cause ?? error),
 });
 ```
 

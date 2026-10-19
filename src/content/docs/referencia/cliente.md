@@ -42,3 +42,5 @@ A entrada principal e `/store` são os caminhos públicos. Arquivos internos do 
 `SqliteSessionStore(path, options?)` aceita `sessionId` e `busyTimeoutMs`. Seus métodos são `load()`, `save(state)`, `reset()` e `close()`. Prefira configurar `storage.path` diretamente no cliente quando não precisar gerenciar o adaptador.
 
 `SessionStoreError` e `MediaError` estendem Error e possuem `code`. Utilize `DRAX_WA_JS_VERSION` ao informar a versão em um relato de problema.
+
+Veja também a [referência completa de client.on(), once() e off()](/referencia/eventemitter/) e o [mapa de imports e módulos](/referencia/caminhos/).

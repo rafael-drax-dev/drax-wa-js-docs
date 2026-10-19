@@ -1,0 +1,3541 @@
+{
+  "version": "0.0.1-alpha.34",
+  "entryPoints": {
+    ".": "./src/index.js",
+    "./store": "./src/store/public.js"
+  },
+  "emitterMethods": [
+    "addListener",
+    "emit",
+    "eventNames",
+    "getMaxListeners",
+    "listenerCount",
+    "listeners",
+    "off",
+    "on",
+    "once",
+    "prependListener",
+    "prependOnceListener",
+    "rawListeners",
+    "removeAllListeners",
+    "removeListener",
+    "setMaxListeners"
+  ],
+  "instanceFields": [
+    "bound",
+    "connection",
+    "directSender",
+    "directSignal",
+    "downloadOptions",
+    "groupSender",
+    "groupSignal",
+    "mediaOptions",
+    "mediaUploader",
+    "ownsSessionStore",
+    "processing",
+    "sessionStore",
+    "signalDirectory"
+  ],
+  "modules": [
+    {
+      "path": "src/auth/index.js",
+      "exports": [
+        {
+          "name": "COMPANION_WEB_CLIENT_TYPE",
+          "kind": "object"
+        },
+        {
+          "name": "CROCKFORD_CHARACTERS",
+          "kind": "string"
+        },
+        {
+          "name": "DEFAULT_BROWSER_DESCRIPTION",
+          "kind": "object"
+        },
+        {
+          "name": "KEY_BUNDLE_TYPE",
+          "kind": "object"
+        },
+        {
+          "name": "PAIRING_CODE_PBKDF2_ITERATIONS",
+          "kind": "number"
+        },
+        {
+          "name": "WA_ADV_ACCOUNT_SIG_PREFIX",
+          "kind": "object"
+        },
+        {
+          "name": "WA_ADV_DEVICE_SIG_PREFIX",
+          "kind": "object"
+        },
+        {
+          "name": "WA_ADV_HOSTED_ACCOUNT_SIG_PREFIX",
+          "kind": "object"
+        },
+        {
+          "name": "WA_WEB_SERVICE_WORKER_URL",
+          "kind": "string"
+        },
+        {
+          "name": "WA_WEB_VERSION",
+          "kind": "object"
+        },
+        {
+          "name": "WA_WEB_VERSION_FALLBACK",
+          "kind": "object"
+        },
+        {
+          "name": "aes256CtrDecrypt",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "aes256CtrEncrypt",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "buildLoginClientPayload",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "buildPairingCodeHelloNode",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "buildPairingQrData",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "buildRegistrationClientPayload",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "bytesToCrockford",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "configureSuccessfulPairing",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "derivePairingCodeKey",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "encodeBigEndian",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "encodeOutgoingSignedDeviceIdentity",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "extractWhatsAppWebClientRevision",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "fetchLatestWhatsAppWebVersion",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "finishPairingCodeCompanion",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "generatePairingCode",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "generatePairingEphemeralKeyPair",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "generateRegistrationCredentials",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "getCompanionPlatformId",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "unwrapPrimaryEphemeralPublicKey",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "wrapCompanionEphemeralPublicKey",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/auth/pair-success.js",
+      "exports": [
+        {
+          "name": "WA_ADV_ACCOUNT_SIG_PREFIX",
+          "kind": "object"
+        },
+        {
+          "name": "WA_ADV_DEVICE_SIG_PREFIX",
+          "kind": "object"
+        },
+        {
+          "name": "WA_ADV_HOSTED_ACCOUNT_SIG_PREFIX",
+          "kind": "object"
+        },
+        {
+          "name": "configureSuccessfulPairing",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "encodeOutgoingSignedDeviceIdentity",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/auth/pairing-code.js",
+      "exports": [
+        {
+          "name": "CROCKFORD_CHARACTERS",
+          "kind": "string"
+        },
+        {
+          "name": "PAIRING_CODE_PBKDF2_ITERATIONS",
+          "kind": "number"
+        },
+        {
+          "name": "aes256CtrDecrypt",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "aes256CtrEncrypt",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "buildPairingCodeHelloNode",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "bytesToCrockford",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "derivePairingCodeKey",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "finishPairingCodeCompanion",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "generatePairingCode",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "generatePairingEphemeralKeyPair",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "unwrapPrimaryEphemeralPublicKey",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "wrapCompanionEphemeralPublicKey",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/auth/pairing-controller.js",
+      "exports": [
+        {
+          "name": "PairingController",
+          "kind": "function",
+          "members": [
+            {
+              "name": "clear",
+              "kind": "function"
+            },
+            {
+              "name": "handle",
+              "kind": "function"
+            },
+            {
+              "name": "requestCode",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/auth/qr-pairing.js",
+      "exports": [
+        {
+          "name": "COMPANION_WEB_CLIENT_TYPE",
+          "kind": "object"
+        },
+        {
+          "name": "DEFAULT_BROWSER_DESCRIPTION",
+          "kind": "object"
+        },
+        {
+          "name": "buildPairingQrData",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "getCompanionPlatformId",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/auth/registration.js",
+      "exports": [
+        {
+          "name": "KEY_BUNDLE_TYPE",
+          "kind": "object"
+        },
+        {
+          "name": "WA_WEB_VERSION",
+          "kind": "object"
+        },
+        {
+          "name": "buildLoginClientPayload",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "buildRegistrationClientPayload",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "encodeBigEndian",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "generateRegistrationCredentials",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/auth/web-version.js",
+      "exports": [
+        {
+          "name": "WA_WEB_SERVICE_WORKER_URL",
+          "kind": "string"
+        },
+        {
+          "name": "WA_WEB_VERSION_FALLBACK",
+          "kind": "object"
+        },
+        {
+          "name": "extractWhatsAppWebClientRevision",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "fetchLatestWhatsAppWebVersion",
+          "kind": "function",
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/binary/decoder.js",
+      "exports": [
+        {
+          "name": "decodeBinaryNode",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "decodeDecompressedBinaryNode",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "decompressBinaryNodeFrame",
+          "kind": "function",
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/binary/encoder.js",
+      "exports": [
+        {
+          "name": "encodeBinaryNode",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/binary/index.js",
+      "exports": [
+        {
+          "name": "BINARY_TAGS",
+          "kind": "object"
+        },
+        {
+          "name": "DOUBLE_BYTE_TOKENS",
+          "kind": "object"
+        },
+        {
+          "name": "JID_DOMAINS",
+          "kind": "object"
+        },
+        {
+          "name": "SINGLE_BYTE_TOKENS",
+          "kind": "object"
+        },
+        {
+          "name": "decodeBinaryNode",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "decodeDecompressedBinaryNode",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "decompressBinaryNodeFrame",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "encodeBinaryNode",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "getBinaryNodeChild",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "getBinaryNodeChildren",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "jidDecode",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "jidEncode",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/binary/jid.js",
+      "exports": [
+        {
+          "name": "JID_DOMAINS",
+          "kind": "object"
+        },
+        {
+          "name": "jidDecode",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "jidEncode",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "serverForDomain",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/binary/nodes.js",
+      "exports": [
+        {
+          "name": "getBinaryNodeChild",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "getBinaryNodeChildren",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/binary/tokens.js",
+      "exports": [
+        {
+          "name": "BINARY_TAGS",
+          "kind": "object"
+        },
+        {
+          "name": "DOUBLE_BYTE_TOKENS",
+          "kind": "object"
+        },
+        {
+          "name": "SINGLE_BYTE_TOKENS",
+          "kind": "object"
+        }
+      ]
+    },
+    {
+      "path": "src/core/authenticated-connection.js",
+      "exports": [
+        {
+          "name": "CONNECTION_PHASES",
+          "kind": "object"
+        },
+        {
+          "name": "DraxAuthenticatedConnection",
+          "kind": "function",
+          "members": [
+            {
+              "name": "status",
+              "kind": "function"
+            },
+            {
+              "name": "nextTag",
+              "kind": "function"
+            },
+            {
+              "name": "connect",
+              "kind": "function"
+            },
+            {
+              "name": "requestPairingCode",
+              "kind": "function"
+            },
+            {
+              "name": "close",
+              "kind": "function"
+            },
+            {
+              "name": "logout",
+              "kind": "function"
+            },
+            {
+              "name": "sendNode",
+              "kind": "function"
+            },
+            {
+              "name": "queryNode",
+              "kind": "function"
+            },
+            {
+              "name": "waitUntilReady",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/core/client.js",
+      "exports": [
+        {
+          "name": "DraxClient",
+          "kind": "function",
+          "members": [
+            {
+              "name": "events",
+              "kind": "getter"
+            },
+            {
+              "name": "isPaired",
+              "kind": "getter"
+            },
+            {
+              "name": "ready",
+              "kind": "getter"
+            },
+            {
+              "name": "status",
+              "kind": "function"
+            },
+            {
+              "name": "connect",
+              "kind": "function"
+            },
+            {
+              "name": "logout",
+              "kind": "function"
+            },
+            {
+              "name": "requestPairingCode",
+              "kind": "function"
+            },
+            {
+              "name": "waitUntilReady",
+              "kind": "function"
+            },
+            {
+              "name": "close",
+              "kind": "function"
+            },
+            {
+              "name": "sendText",
+              "kind": "function"
+            },
+            {
+              "name": "sendMessage",
+              "kind": "function"
+            },
+            {
+              "name": "resolveRecipient",
+              "kind": "function"
+            },
+            {
+              "name": "downloadMedia",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/core/index.js",
+      "exports": [
+        {
+          "name": "CONNECTION_PHASES",
+          "kind": "object"
+        },
+        {
+          "name": "DraxAuthenticatedConnection",
+          "kind": "function",
+          "members": [
+            {
+              "name": "status",
+              "kind": "function"
+            },
+            {
+              "name": "nextTag",
+              "kind": "function"
+            },
+            {
+              "name": "connect",
+              "kind": "function"
+            },
+            {
+              "name": "requestPairingCode",
+              "kind": "function"
+            },
+            {
+              "name": "close",
+              "kind": "function"
+            },
+            {
+              "name": "logout",
+              "kind": "function"
+            },
+            {
+              "name": "sendNode",
+              "kind": "function"
+            },
+            {
+              "name": "queryNode",
+              "kind": "function"
+            },
+            {
+              "name": "waitUntilReady",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "DraxClient",
+          "kind": "function",
+          "members": [
+            {
+              "name": "events",
+              "kind": "getter"
+            },
+            {
+              "name": "isPaired",
+              "kind": "getter"
+            },
+            {
+              "name": "ready",
+              "kind": "getter"
+            },
+            {
+              "name": "status",
+              "kind": "function"
+            },
+            {
+              "name": "connect",
+              "kind": "function"
+            },
+            {
+              "name": "logout",
+              "kind": "function"
+            },
+            {
+              "name": "requestPairingCode",
+              "kind": "function"
+            },
+            {
+              "name": "waitUntilReady",
+              "kind": "function"
+            },
+            {
+              "name": "close",
+              "kind": "function"
+            },
+            {
+              "name": "sendText",
+              "kind": "function"
+            },
+            {
+              "name": "sendMessage",
+              "kind": "function"
+            },
+            {
+              "name": "resolveRecipient",
+              "kind": "function"
+            },
+            {
+              "name": "downloadMedia",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/crypto/index.js",
+      "exports": [
+        {
+          "name": "NOISE_DH_LENGTH",
+          "kind": "number"
+        },
+        {
+          "name": "NOISE_HASH_LENGTH",
+          "kind": "number"
+        },
+        {
+          "name": "NOISE_MAX_NONCE",
+          "kind": "bigint"
+        },
+        {
+          "name": "NOISE_NONCE_LENGTH",
+          "kind": "number"
+        },
+        {
+          "name": "NOISE_PROTOCOL_NAME",
+          "kind": "string"
+        },
+        {
+          "name": "NOISE_TAG_LENGTH",
+          "kind": "number"
+        },
+        {
+          "name": "NoiseCipherState",
+          "kind": "function",
+          "members": [
+            {
+              "name": "initializeKey",
+              "kind": "function"
+            },
+            {
+              "name": "hasKey",
+              "kind": "function"
+            },
+            {
+              "name": "nonce",
+              "kind": "getter"
+            },
+            {
+              "name": "setNonce",
+              "kind": "function"
+            },
+            {
+              "name": "encryptWithAd",
+              "kind": "function"
+            },
+            {
+              "name": "decryptWithAd",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "NoiseSymmetricState",
+          "kind": "function",
+          "members": [
+            {
+              "name": "mixKey",
+              "kind": "function"
+            },
+            {
+              "name": "mixHash",
+              "kind": "function"
+            },
+            {
+              "name": "encryptAndHash",
+              "kind": "function"
+            },
+            {
+              "name": "decryptAndHash",
+              "kind": "function"
+            },
+            {
+              "name": "split",
+              "kind": "function"
+            },
+            {
+              "name": "getHandshakeHash",
+              "kind": "function"
+            },
+            {
+              "name": "getChainingKey",
+              "kind": "function"
+            },
+            {
+              "name": "cipherHasKey",
+              "kind": "getter"
+            },
+            {
+              "name": "cipherNonce",
+              "kind": "getter"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "NoiseTransportState",
+          "kind": "function",
+          "members": [
+            {
+              "name": "encrypt",
+              "kind": "function"
+            },
+            {
+              "name": "decrypt",
+              "kind": "function"
+            },
+            {
+              "name": "writeNonce",
+              "kind": "getter"
+            },
+            {
+              "name": "readNonce",
+              "kind": "getter"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "WA_NOISE_CERT_ISSUER_SERIAL",
+          "kind": "number"
+        },
+        {
+          "name": "WA_NOISE_CERT_ROOT_KEY",
+          "kind": "object"
+        },
+        {
+          "name": "WhatsAppNoiseInitiator",
+          "kind": "function",
+          "members": [
+            {
+              "name": "stage",
+              "kind": "getter"
+            },
+            {
+              "name": "ephemeralPublicKey",
+              "kind": "getter"
+            },
+            {
+              "name": "serverStaticKey",
+              "kind": "getter"
+            },
+            {
+              "name": "serverCertificate",
+              "kind": "getter"
+            },
+            {
+              "name": "handshakeHash",
+              "kind": "getter"
+            },
+            {
+              "name": "chainingKey",
+              "kind": "getter"
+            },
+            {
+              "name": "clientHelloMaterial",
+              "kind": "function"
+            },
+            {
+              "name": "processServerHello",
+              "kind": "function"
+            },
+            {
+              "name": "finishHandshake",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "aesGcmDecrypt",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "aesGcmEncrypt",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "buildNoiseNonce",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "deriveX25519PublicKey",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "generateX25519KeyPair",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "hmacSha256",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "noiseHkdf",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "sha256",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "verifyCurve25519Signature",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "verifyServerCertificate",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "x25519",
+          "kind": "function",
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/crypto/noise/cipher-state.js",
+      "exports": [
+        {
+          "name": "NoiseCipherState",
+          "kind": "function",
+          "members": [
+            {
+              "name": "initializeKey",
+              "kind": "function"
+            },
+            {
+              "name": "hasKey",
+              "kind": "function"
+            },
+            {
+              "name": "nonce",
+              "kind": "getter"
+            },
+            {
+              "name": "setNonce",
+              "kind": "function"
+            },
+            {
+              "name": "encryptWithAd",
+              "kind": "function"
+            },
+            {
+              "name": "decryptWithAd",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/crypto/noise/constants.js",
+      "exports": [
+        {
+          "name": "NOISE_DH_LENGTH",
+          "kind": "number"
+        },
+        {
+          "name": "NOISE_HASH_LENGTH",
+          "kind": "number"
+        },
+        {
+          "name": "NOISE_MAX_NONCE",
+          "kind": "bigint"
+        },
+        {
+          "name": "NOISE_NONCE_LENGTH",
+          "kind": "number"
+        },
+        {
+          "name": "NOISE_PROTOCOL_NAME",
+          "kind": "string"
+        },
+        {
+          "name": "NOISE_TAG_LENGTH",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "path": "src/crypto/noise/index.js",
+      "exports": [
+        {
+          "name": "NOISE_DH_LENGTH",
+          "kind": "number"
+        },
+        {
+          "name": "NOISE_HASH_LENGTH",
+          "kind": "number"
+        },
+        {
+          "name": "NOISE_MAX_NONCE",
+          "kind": "bigint"
+        },
+        {
+          "name": "NOISE_NONCE_LENGTH",
+          "kind": "number"
+        },
+        {
+          "name": "NOISE_PROTOCOL_NAME",
+          "kind": "string"
+        },
+        {
+          "name": "NOISE_TAG_LENGTH",
+          "kind": "number"
+        },
+        {
+          "name": "NoiseCipherState",
+          "kind": "function",
+          "members": [
+            {
+              "name": "initializeKey",
+              "kind": "function"
+            },
+            {
+              "name": "hasKey",
+              "kind": "function"
+            },
+            {
+              "name": "nonce",
+              "kind": "getter"
+            },
+            {
+              "name": "setNonce",
+              "kind": "function"
+            },
+            {
+              "name": "encryptWithAd",
+              "kind": "function"
+            },
+            {
+              "name": "decryptWithAd",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "NoiseSymmetricState",
+          "kind": "function",
+          "members": [
+            {
+              "name": "mixKey",
+              "kind": "function"
+            },
+            {
+              "name": "mixHash",
+              "kind": "function"
+            },
+            {
+              "name": "encryptAndHash",
+              "kind": "function"
+            },
+            {
+              "name": "decryptAndHash",
+              "kind": "function"
+            },
+            {
+              "name": "split",
+              "kind": "function"
+            },
+            {
+              "name": "getHandshakeHash",
+              "kind": "function"
+            },
+            {
+              "name": "getChainingKey",
+              "kind": "function"
+            },
+            {
+              "name": "cipherHasKey",
+              "kind": "getter"
+            },
+            {
+              "name": "cipherNonce",
+              "kind": "getter"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "NoiseTransportState",
+          "kind": "function",
+          "members": [
+            {
+              "name": "encrypt",
+              "kind": "function"
+            },
+            {
+              "name": "decrypt",
+              "kind": "function"
+            },
+            {
+              "name": "writeNonce",
+              "kind": "getter"
+            },
+            {
+              "name": "readNonce",
+              "kind": "getter"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "WA_NOISE_CERT_ISSUER_SERIAL",
+          "kind": "number"
+        },
+        {
+          "name": "WA_NOISE_CERT_ROOT_KEY",
+          "kind": "object"
+        },
+        {
+          "name": "WhatsAppNoiseInitiator",
+          "kind": "function",
+          "members": [
+            {
+              "name": "stage",
+              "kind": "getter"
+            },
+            {
+              "name": "ephemeralPublicKey",
+              "kind": "getter"
+            },
+            {
+              "name": "serverStaticKey",
+              "kind": "getter"
+            },
+            {
+              "name": "serverCertificate",
+              "kind": "getter"
+            },
+            {
+              "name": "handshakeHash",
+              "kind": "getter"
+            },
+            {
+              "name": "chainingKey",
+              "kind": "getter"
+            },
+            {
+              "name": "clientHelloMaterial",
+              "kind": "function"
+            },
+            {
+              "name": "processServerHello",
+              "kind": "function"
+            },
+            {
+              "name": "finishHandshake",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "aesGcmDecrypt",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "aesGcmEncrypt",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "buildNoiseNonce",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "deriveX25519PublicKey",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "generateX25519KeyPair",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "hmacSha256",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "noiseHkdf",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "sha256",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "verifyCurve25519Signature",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "verifyServerCertificate",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "x25519",
+          "kind": "function",
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/crypto/noise/primitives.js",
+      "exports": [
+        {
+          "name": "aesGcmDecrypt",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "aesGcmEncrypt",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "buildNoiseNonce",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "hmacSha256",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "noiseHkdf",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "sha256",
+          "kind": "function",
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/crypto/noise/server-cert.js",
+      "exports": [
+        {
+          "name": "WA_NOISE_CERT_ISSUER_SERIAL",
+          "kind": "number"
+        },
+        {
+          "name": "WA_NOISE_CERT_ROOT_KEY",
+          "kind": "object"
+        },
+        {
+          "name": "verifyCurve25519Signature",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "verifyServerCertificate",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/crypto/noise/symmetric-state.js",
+      "exports": [
+        {
+          "name": "NoiseSymmetricState",
+          "kind": "function",
+          "members": [
+            {
+              "name": "mixKey",
+              "kind": "function"
+            },
+            {
+              "name": "mixHash",
+              "kind": "function"
+            },
+            {
+              "name": "encryptAndHash",
+              "kind": "function"
+            },
+            {
+              "name": "decryptAndHash",
+              "kind": "function"
+            },
+            {
+              "name": "split",
+              "kind": "function"
+            },
+            {
+              "name": "getHandshakeHash",
+              "kind": "function"
+            },
+            {
+              "name": "getChainingKey",
+              "kind": "function"
+            },
+            {
+              "name": "cipherHasKey",
+              "kind": "getter"
+            },
+            {
+              "name": "cipherNonce",
+              "kind": "getter"
+            }
+          ],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/crypto/noise/transport-state.js",
+      "exports": [
+        {
+          "name": "NoiseTransportState",
+          "kind": "function",
+          "members": [
+            {
+              "name": "encrypt",
+              "kind": "function"
+            },
+            {
+              "name": "decrypt",
+              "kind": "function"
+            },
+            {
+              "name": "writeNonce",
+              "kind": "getter"
+            },
+            {
+              "name": "readNonce",
+              "kind": "getter"
+            }
+          ],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/crypto/noise/whatsapp-initiator.js",
+      "exports": [
+        {
+          "name": "WhatsAppNoiseInitiator",
+          "kind": "function",
+          "members": [
+            {
+              "name": "stage",
+              "kind": "getter"
+            },
+            {
+              "name": "ephemeralPublicKey",
+              "kind": "getter"
+            },
+            {
+              "name": "serverStaticKey",
+              "kind": "getter"
+            },
+            {
+              "name": "serverCertificate",
+              "kind": "getter"
+            },
+            {
+              "name": "handshakeHash",
+              "kind": "getter"
+            },
+            {
+              "name": "chainingKey",
+              "kind": "getter"
+            },
+            {
+              "name": "clientHelloMaterial",
+              "kind": "function"
+            },
+            {
+              "name": "processServerHello",
+              "kind": "function"
+            },
+            {
+              "name": "finishHandshake",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/crypto/noise/x25519.js",
+      "exports": [
+        {
+          "name": "deriveX25519PublicKey",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "generateX25519KeyPair",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "x25519",
+          "kind": "function",
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/events/subscriptions.js",
+      "exports": [
+        {
+          "name": "CLIENT_EVENT_NAMES",
+          "kind": "object"
+        },
+        {
+          "name": "CONNECTION_EVENT_NAMES",
+          "kind": "object"
+        },
+        {
+          "name": "ClientEvents",
+          "kind": "function",
+          "members": [
+            {
+              "name": "names",
+              "kind": "getter"
+            },
+            {
+              "name": "subscribe",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/index.js",
+      "exports": [
+        {
+          "name": "DRAX_WA_JS_VERSION",
+          "kind": "string"
+        },
+        {
+          "name": "DraxClient",
+          "kind": "function",
+          "members": [
+            {
+              "name": "events",
+              "kind": "getter"
+            },
+            {
+              "name": "isPaired",
+              "kind": "getter"
+            },
+            {
+              "name": "ready",
+              "kind": "getter"
+            },
+            {
+              "name": "status",
+              "kind": "function"
+            },
+            {
+              "name": "connect",
+              "kind": "function"
+            },
+            {
+              "name": "logout",
+              "kind": "function"
+            },
+            {
+              "name": "requestPairingCode",
+              "kind": "function"
+            },
+            {
+              "name": "waitUntilReady",
+              "kind": "function"
+            },
+            {
+              "name": "close",
+              "kind": "function"
+            },
+            {
+              "name": "sendText",
+              "kind": "function"
+            },
+            {
+              "name": "sendMessage",
+              "kind": "function"
+            },
+            {
+              "name": "resolveRecipient",
+              "kind": "function"
+            },
+            {
+              "name": "downloadMedia",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "MediaError",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "SessionStoreError",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "SqliteSessionStore",
+          "kind": "function",
+          "members": [
+            {
+              "name": "_open",
+              "kind": "function"
+            },
+            {
+              "name": "_initialize",
+              "kind": "function"
+            },
+            {
+              "name": "_read",
+              "kind": "function"
+            },
+            {
+              "name": "load",
+              "kind": "function"
+            },
+            {
+              "name": "save",
+              "kind": "function"
+            },
+            {
+              "name": "reset",
+              "kind": "function"
+            },
+            {
+              "name": "close",
+              "kind": "function"
+            },
+            {
+              "name": "toString",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/media/crypto.js",
+      "exports": [
+        {
+          "name": "decryptMediaBytes",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "deriveMediaKeys",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "encryptMediaBytes",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "mediaHkdfInfo",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/media/download.js",
+      "exports": [
+        {
+          "name": "DEFAULT_MAX_MEDIA_BYTES",
+          "kind": "number"
+        },
+        {
+          "name": "DEFAULT_MEDIA_HOST",
+          "kind": "string"
+        },
+        {
+          "name": "downloadMediaBytes",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "resolveMediaUrl",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/media/index.js",
+      "exports": [
+        {
+          "name": "DEFAULT_MAX_MEDIA_BYTES",
+          "kind": "number"
+        },
+        {
+          "name": "DEFAULT_MEDIA_HOST",
+          "kind": "string"
+        },
+        {
+          "name": "MediaError",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "decryptMediaBytes",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "deriveMediaKeys",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "downloadMediaBytes",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "encryptMediaBytes",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "mediaHkdfInfo",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "resolveMediaSource",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "resolveMediaUrl",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/media/preparation.js",
+      "exports": [
+        {
+          "name": "prepareMedia",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "validateMediaType",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/media/source.js",
+      "exports": [
+        {
+          "name": "DEFAULT_SOURCE_LIMIT",
+          "kind": "number"
+        },
+        {
+          "name": "MediaError",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "isPublicAddress",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "openPublicHttpResponse",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "resolveMediaSource",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "resolvePublicAddress",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "resolveRemoteSource",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "validateSourceUrl",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/media/upload.js",
+      "exports": [
+        {
+          "name": "MediaUploader",
+          "kind": "function",
+          "members": [
+            {
+              "name": "upload",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/messages/context.js",
+      "exports": [
+        {
+          "name": "applyQuotedContext",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/messages/direct-sender.js",
+      "exports": [
+        {
+          "name": "DraxDirectMessageSender",
+          "kind": "function",
+          "members": [
+            {
+              "name": "sendText",
+              "kind": "function"
+            },
+            {
+              "name": "sendMessage",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/messages/group-sender.js",
+      "exports": [
+        {
+          "name": "DraxGroupMessageSender",
+          "kind": "function",
+          "members": [
+            {
+              "name": "sendText",
+              "kind": "function"
+            },
+            {
+              "name": "sendMessage",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/messages/index.js",
+      "exports": [
+        {
+          "name": "DraxDirectMessageSender",
+          "kind": "function",
+          "members": [
+            {
+              "name": "sendText",
+              "kind": "function"
+            },
+            {
+              "name": "sendMessage",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "DraxGroupMessageSender",
+          "kind": "function",
+          "members": [
+            {
+              "name": "sendText",
+              "kind": "function"
+            },
+            {
+              "name": "sendMessage",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "decodeWhatsAppMessagePlaintext",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "encodeWhatsAppDeviceSentTextMessage",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "encodeWhatsAppSenderKeyDistribution",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "encodeWhatsAppTextMessage",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "padRandomMax16",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "unpadRandomMax16",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/messages/media-content.js",
+      "exports": [
+        {
+          "name": "materializeMedia",
+          "kind": "function",
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/messages/outbound-shared.js",
+      "exports": [
+        {
+          "name": "ensureDeviceSessions",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "publishMessage",
+          "kind": "function",
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/messages/plaintext.js",
+      "exports": [
+        {
+          "name": "decodeWhatsAppMessagePlaintext",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "encodeWhatsAppDeviceSentTextMessage",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "encodeWhatsAppMessage",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "encodeWhatsAppSenderKeyDistribution",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "encodeWhatsAppTextMessage",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "padRandomMax16",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "resolveMessageEnvelope",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "unpadRandomMax16",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "unwrapWhatsAppMessage",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/messages/preparation.js",
+      "exports": [
+        {
+          "name": "prepareMessage",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/proto/adv/index.js",
+      "exports": [
+        {
+          "name": "ADV_ENCRYPTION_TYPE",
+          "kind": "object"
+        },
+        {
+          "name": "decodeADVDeviceIdentity",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "decodeADVSignedDeviceIdentity",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "decodeADVSignedDeviceIdentityHMAC",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "encodeADVDeviceIdentity",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "encodeADVSignedDeviceIdentity",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "encodeADVSignedDeviceIdentityHMAC",
+          "kind": "function",
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/proto/adv/schema.js",
+      "exports": [
+        {
+          "name": "ADVDeviceIdentityType",
+          "kind": "object"
+        },
+        {
+          "name": "ADVSignedDeviceIdentityHMACType",
+          "kind": "object"
+        },
+        {
+          "name": "ADVSignedDeviceIdentityType",
+          "kind": "object"
+        },
+        {
+          "name": "ADV_ENCRYPTION_TYPE",
+          "kind": "object"
+        },
+        {
+          "name": "advRoot",
+          "kind": "object"
+        }
+      ]
+    },
+    {
+      "path": "src/proto/cert/index.js",
+      "exports": [
+        {
+          "name": "decodeCertChain",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "decodeCertDetails",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "encodeCertChain",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "encodeCertDetails",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/proto/cert/schema.js",
+      "exports": [
+        {
+          "name": "CertChainType",
+          "kind": "object"
+        },
+        {
+          "name": "CertDetailsType",
+          "kind": "object"
+        },
+        {
+          "name": "certRoot",
+          "kind": "object"
+        }
+      ]
+    },
+    {
+      "path": "src/proto/client-payload/index.js",
+      "exports": [
+        {
+          "name": "CLIENT_PLATFORM",
+          "kind": "object"
+        },
+        {
+          "name": "CONNECT_REASON",
+          "kind": "object"
+        },
+        {
+          "name": "CONNECT_TYPE",
+          "kind": "object"
+        },
+        {
+          "name": "RELEASE_CHANNEL",
+          "kind": "object"
+        },
+        {
+          "name": "WEB_SUB_PLATFORM",
+          "kind": "object"
+        },
+        {
+          "name": "decodeClientPayload",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "encodeClientPayload",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/proto/client-payload/schema.js",
+      "exports": [
+        {
+          "name": "CLIENT_PLATFORM",
+          "kind": "object"
+        },
+        {
+          "name": "CONNECT_REASON",
+          "kind": "object"
+        },
+        {
+          "name": "CONNECT_TYPE",
+          "kind": "object"
+        },
+        {
+          "name": "ClientPayloadType",
+          "kind": "object"
+        },
+        {
+          "name": "RELEASE_CHANNEL",
+          "kind": "object"
+        },
+        {
+          "name": "WEB_SUB_PLATFORM",
+          "kind": "object"
+        },
+        {
+          "name": "clientPayloadRoot",
+          "kind": "object"
+        }
+      ]
+    },
+    {
+      "path": "src/proto/device-props/index.js",
+      "exports": [
+        {
+          "name": "DEVICE_PLATFORM_TYPES",
+          "kind": "object"
+        },
+        {
+          "name": "decodeDeviceProps",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "encodeDeviceProps",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/proto/device-props/schema.js",
+      "exports": [
+        {
+          "name": "DEVICE_PLATFORM_TYPES",
+          "kind": "object"
+        },
+        {
+          "name": "DevicePropsType",
+          "kind": "object"
+        },
+        {
+          "name": "devicePropsRoot",
+          "kind": "object"
+        }
+      ]
+    },
+    {
+      "path": "src/proto/handshake/index.js",
+      "exports": [
+        {
+          "name": "HANDSHAKE_PQ_MODES",
+          "kind": "object"
+        },
+        {
+          "name": "decodeHandshakeMessage",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "encodeClientFinish",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "encodeClientHello",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "encodeHandshakeMessage",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "requireServerHello",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/proto/handshake/schema.js",
+      "exports": [
+        {
+          "name": "HANDSHAKE_PQ_MODES",
+          "kind": "object"
+        },
+        {
+          "name": "HandshakeMessageType",
+          "kind": "object"
+        },
+        {
+          "name": "handshakeRoot",
+          "kind": "object"
+        }
+      ]
+    },
+    {
+      "path": "src/proto/index.js",
+      "exports": [
+        {
+          "name": "HANDSHAKE_PQ_MODES",
+          "kind": "object"
+        },
+        {
+          "name": "decodeHandshakeMessage",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "encodeClientFinish",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "encodeClientHello",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "encodeHandshakeMessage",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "requireServerHello",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/protocol/index.js",
+      "exports": [
+        {
+          "name": "buildAckStanza",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "buildDirectFanoutMessageStanza",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "buildDirectMessageStanza",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "buildReceiptAckStanza",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "extractReceiptIds",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "generateMessageIdV2",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "parseReceiptNode",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "participantHashV2",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/protocol/outbound-message.js",
+      "exports": [
+        {
+          "name": "buildDirectFanoutMessageStanza",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "buildDirectMessageStanza",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "buildMessageMetadataNodes",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "generateMessageIdV2",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "participantHashV2",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/protocol/receipt.js",
+      "exports": [
+        {
+          "name": "buildReceiptAckStanza",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "extractReceiptIds",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "parseReceiptNode",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/protocol/stanza-ack.js",
+      "exports": [
+        {
+          "name": "buildAckStanza",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/signal/direct-session.js",
+      "exports": [
+        {
+          "name": "DraxDirectSignal",
+          "kind": "function",
+          "members": [
+            {
+              "name": "hasSession",
+              "kind": "function"
+            },
+            {
+              "name": "getIdentityKey",
+              "kind": "function"
+            },
+            {
+              "name": "getLocalIdentityKey",
+              "kind": "function"
+            },
+            {
+              "name": "injectOutgoingSession",
+              "kind": "function"
+            },
+            {
+              "name": "encryptMessage",
+              "kind": "function"
+            },
+            {
+              "name": "decryptMessage",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "jidToSignalProtocolAddress",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/signal/directory.js",
+      "exports": [
+        {
+          "name": "DraxSignalDirectory",
+          "kind": "function",
+          "members": [
+            {
+              "name": "resolveRecipient",
+              "kind": "function"
+            },
+            {
+              "name": "resolveDirectFanout",
+              "kind": "function"
+            },
+            {
+              "name": "fetchBundles",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "buildDeviceSyncQuery",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "buildKeyBundleQuery",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "buildLidLookupQuery",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "normalizePhoneJid",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "parseDeviceSyncResponse",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "parseKeyBundleResponse",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "parseLidLookupResponse",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/signal/group-sender-key.js",
+      "exports": [
+        {
+          "name": "DraxGroupSignal",
+          "kind": "function",
+          "members": [
+            {
+              "name": "createDistribution",
+              "kind": "function"
+            },
+            {
+              "name": "processDistribution",
+              "kind": "function"
+            },
+            {
+              "name": "encryptGroupMessage",
+              "kind": "function"
+            },
+            {
+              "name": "decryptGroupMessage",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "decodeSenderKeyDistribution",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "senderKeyName",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/signal/icdc.js",
+      "exports": [
+        {
+          "name": "DEVICE_LIST_METADATA_VERSION",
+          "kind": "number"
+        },
+        {
+          "name": "ICDC_HASH_LENGTH",
+          "kind": "number"
+        },
+        {
+          "name": "computeDeviceKeyHash",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/signal/index.js",
+      "exports": [
+        {
+          "name": "DEVICE_LIST_METADATA_VERSION",
+          "kind": "number"
+        },
+        {
+          "name": "DraxDirectSignal",
+          "kind": "function",
+          "members": [
+            {
+              "name": "hasSession",
+              "kind": "function"
+            },
+            {
+              "name": "getIdentityKey",
+              "kind": "function"
+            },
+            {
+              "name": "getLocalIdentityKey",
+              "kind": "function"
+            },
+            {
+              "name": "injectOutgoingSession",
+              "kind": "function"
+            },
+            {
+              "name": "encryptMessage",
+              "kind": "function"
+            },
+            {
+              "name": "decryptMessage",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "DraxGroupSignal",
+          "kind": "function",
+          "members": [
+            {
+              "name": "createDistribution",
+              "kind": "function"
+            },
+            {
+              "name": "processDistribution",
+              "kind": "function"
+            },
+            {
+              "name": "encryptGroupMessage",
+              "kind": "function"
+            },
+            {
+              "name": "decryptGroupMessage",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "DraxSignalDirectory",
+          "kind": "function",
+          "members": [
+            {
+              "name": "resolveRecipient",
+              "kind": "function"
+            },
+            {
+              "name": "resolveDirectFanout",
+              "kind": "function"
+            },
+            {
+              "name": "fetchBundles",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "DraxSignalSessionStore",
+          "kind": "function",
+          "members": [
+            {
+              "name": "loadSession",
+              "kind": "function"
+            },
+            {
+              "name": "storeSession",
+              "kind": "function"
+            },
+            {
+              "name": "isTrustedIdentity",
+              "kind": "function"
+            },
+            {
+              "name": "loadIdentityKey",
+              "kind": "function"
+            },
+            {
+              "name": "saveIdentity",
+              "kind": "function"
+            },
+            {
+              "name": "loadPreKey",
+              "kind": "function"
+            },
+            {
+              "name": "removePreKey",
+              "kind": "function"
+            },
+            {
+              "name": "loadSignedPreKey",
+              "kind": "function"
+            },
+            {
+              "name": "getOurRegistrationId",
+              "kind": "function"
+            },
+            {
+              "name": "getOurIdentity",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "ICDC_HASH_LENGTH",
+          "kind": "number"
+        },
+        {
+          "name": "INITIAL_PREKEY_COUNT",
+          "kind": "number"
+        },
+        {
+          "name": "KEY_BUNDLE_TYPE",
+          "kind": "object"
+        },
+        {
+          "name": "MIN_PREKEY_COUNT",
+          "kind": "number"
+        },
+        {
+          "name": "buildDeviceSyncQuery",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "buildKeyBundleQuery",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "buildLidLookupQuery",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "computeDeviceKeyHash",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "createPreKeyUpload",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "decodeSenderKeyDistribution",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "generateSignalPreKeys",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "jidToSignalProtocolAddress",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "normalizePhoneJid",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "parseDeviceSyncResponse",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "parseKeyBundleResponse",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "parseLidLookupResponse",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "senderKeyName",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "toSignalPublicKey",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "xmppPreKey",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "xmppSignedPreKey",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/signal/prekeys.js",
+      "exports": [
+        {
+          "name": "INITIAL_PREKEY_COUNT",
+          "kind": "number"
+        },
+        {
+          "name": "KEY_BUNDLE_TYPE",
+          "kind": "object"
+        },
+        {
+          "name": "MIN_PREKEY_COUNT",
+          "kind": "number"
+        },
+        {
+          "name": "createPreKeyUpload",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "generateSignalPreKeys",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "xmppPreKey",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "xmppSignedPreKey",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/signal/session-store.js",
+      "exports": [
+        {
+          "name": "DraxSignalSessionStore",
+          "kind": "function",
+          "members": [
+            {
+              "name": "loadSession",
+              "kind": "function"
+            },
+            {
+              "name": "storeSession",
+              "kind": "function"
+            },
+            {
+              "name": "isTrustedIdentity",
+              "kind": "function"
+            },
+            {
+              "name": "loadIdentityKey",
+              "kind": "function"
+            },
+            {
+              "name": "saveIdentity",
+              "kind": "function"
+            },
+            {
+              "name": "loadPreKey",
+              "kind": "function"
+            },
+            {
+              "name": "removePreKey",
+              "kind": "function"
+            },
+            {
+              "name": "loadSignedPreKey",
+              "kind": "function"
+            },
+            {
+              "name": "getOurRegistrationId",
+              "kind": "function"
+            },
+            {
+              "name": "getOurIdentity",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "toSignalPublicKey",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/store/configuration.js",
+      "exports": [
+        {
+          "name": "resolveSessionStore",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/store/index.js",
+      "exports": [
+        {
+          "name": "SessionStoreError",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "SqliteSessionStore",
+          "kind": "function",
+          "members": [
+            {
+              "name": "_open",
+              "kind": "function"
+            },
+            {
+              "name": "_initialize",
+              "kind": "function"
+            },
+            {
+              "name": "_read",
+              "kind": "function"
+            },
+            {
+              "name": "load",
+              "kind": "function"
+            },
+            {
+              "name": "save",
+              "kind": "function"
+            },
+            {
+              "name": "reset",
+              "kind": "function"
+            },
+            {
+              "name": "close",
+              "kind": "function"
+            },
+            {
+              "name": "toString",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "decodeSessionValue",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "encodeSessionValue",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "resolveSessionStore",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "validateSessionState",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/store/public.js",
+      "exports": [
+        {
+          "name": "SessionStoreError",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "SqliteSessionStore",
+          "kind": "function",
+          "members": [
+            {
+              "name": "_open",
+              "kind": "function"
+            },
+            {
+              "name": "_initialize",
+              "kind": "function"
+            },
+            {
+              "name": "_read",
+              "kind": "function"
+            },
+            {
+              "name": "load",
+              "kind": "function"
+            },
+            {
+              "name": "save",
+              "kind": "function"
+            },
+            {
+              "name": "reset",
+              "kind": "function"
+            },
+            {
+              "name": "close",
+              "kind": "function"
+            },
+            {
+              "name": "toString",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/store/session-codec.js",
+      "exports": [
+        {
+          "name": "decodeSessionValue",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "encodeSessionValue",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/store/session-validation.js",
+      "exports": [
+        {
+          "name": "SessionStoreError",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "validateSessionState",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/store/sqlite-session-store.js",
+      "exports": [
+        {
+          "name": "SqliteSessionStore",
+          "kind": "function",
+          "members": [
+            {
+              "name": "_open",
+              "kind": "function"
+            },
+            {
+              "name": "_initialize",
+              "kind": "function"
+            },
+            {
+              "name": "_read",
+              "kind": "function"
+            },
+            {
+              "name": "load",
+              "kind": "function"
+            },
+            {
+              "name": "save",
+              "kind": "function"
+            },
+            {
+              "name": "reset",
+              "kind": "function"
+            },
+            {
+              "name": "close",
+              "kind": "function"
+            },
+            {
+              "name": "toString",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/transport/errors.js",
+      "exports": [
+        {
+          "name": "TransportConnectionError",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "TransportError",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "TransportStateError",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "TransportTimeoutError",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/transport/frame-codec.js",
+      "exports": [
+        {
+          "name": "FRAME_LENGTH_BYTES",
+          "kind": "number"
+        },
+        {
+          "name": "MAX_FRAME_PAYLOAD_LENGTH",
+          "kind": "number"
+        },
+        {
+          "name": "WA_CONNECTION_HEADER",
+          "kind": "object"
+        },
+        {
+          "name": "WaFrameDecoder",
+          "kind": "function",
+          "members": [
+            {
+              "name": "pendingBytes",
+              "kind": "getter"
+            },
+            {
+              "name": "reset",
+              "kind": "function"
+            },
+            {
+              "name": "push",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "WaFrameEncoder",
+          "kind": "function",
+          "members": [
+            {
+              "name": "sentIntro",
+              "kind": "getter"
+            },
+            {
+              "name": "reset",
+              "kind": "function"
+            },
+            {
+              "name": "encode",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "decodeFrameLength",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "encodeFrameLength",
+          "kind": "function",
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/transport/index.js",
+      "exports": [
+        {
+          "name": "DEFAULT_CLOSE_TIMEOUT_MS",
+          "kind": "number"
+        },
+        {
+          "name": "DEFAULT_CONNECT_TIMEOUT_MS",
+          "kind": "number"
+        },
+        {
+          "name": "DEFAULT_WHATSAPP_ORIGIN",
+          "kind": "string"
+        },
+        {
+          "name": "DEFAULT_WHATSAPP_WEBSOCKET_URL",
+          "kind": "string"
+        },
+        {
+          "name": "FRAME_LENGTH_BYTES",
+          "kind": "number"
+        },
+        {
+          "name": "MAX_FRAME_PAYLOAD_LENGTH",
+          "kind": "number"
+        },
+        {
+          "name": "TRANSPORT_STATES",
+          "kind": "object"
+        },
+        {
+          "name": "TransportConnectionError",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "TransportError",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "TransportStateError",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "TransportTimeoutError",
+          "kind": "function",
+          "members": [],
+          "staticMembers": []
+        },
+        {
+          "name": "WA_CONNECTION_HEADER",
+          "kind": "object"
+        },
+        {
+          "name": "WaFrameDecoder",
+          "kind": "function",
+          "members": [
+            {
+              "name": "pendingBytes",
+              "kind": "getter"
+            },
+            {
+              "name": "reset",
+              "kind": "function"
+            },
+            {
+              "name": "push",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "WaFrameEncoder",
+          "kind": "function",
+          "members": [
+            {
+              "name": "sentIntro",
+              "kind": "getter"
+            },
+            {
+              "name": "reset",
+              "kind": "function"
+            },
+            {
+              "name": "encode",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "WebSocketTransport",
+          "kind": "function",
+          "members": [
+            {
+              "name": "isOpen",
+              "kind": "getter"
+            },
+            {
+              "name": "status",
+              "kind": "function"
+            },
+            {
+              "name": "connect",
+              "kind": "function"
+            },
+            {
+              "name": "send",
+              "kind": "function"
+            },
+            {
+              "name": "close",
+              "kind": "function"
+            },
+            {
+              "name": "destroy",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        },
+        {
+          "name": "decodeFrameLength",
+          "kind": "function",
+          "staticMembers": []
+        },
+        {
+          "name": "encodeFrameLength",
+          "kind": "function",
+          "staticMembers": []
+        }
+      ]
+    },
+    {
+      "path": "src/transport/websocket-transport.js",
+      "exports": [
+        {
+          "name": "DEFAULT_CLOSE_TIMEOUT_MS",
+          "kind": "number"
+        },
+        {
+          "name": "DEFAULT_CONNECT_TIMEOUT_MS",
+          "kind": "number"
+        },
+        {
+          "name": "DEFAULT_WHATSAPP_ORIGIN",
+          "kind": "string"
+        },
+        {
+          "name": "DEFAULT_WHATSAPP_WEBSOCKET_URL",
+          "kind": "string"
+        },
+        {
+          "name": "TRANSPORT_STATES",
+          "kind": "object"
+        },
+        {
+          "name": "WebSocketTransport",
+          "kind": "function",
+          "members": [
+            {
+              "name": "isOpen",
+              "kind": "getter"
+            },
+            {
+              "name": "status",
+              "kind": "function"
+            },
+            {
+              "name": "connect",
+              "kind": "function"
+            },
+            {
+              "name": "send",
+              "kind": "function"
+            },
+            {
+              "name": "close",
+              "kind": "function"
+            },
+            {
+              "name": "destroy",
+              "kind": "function"
+            }
+          ],
+          "staticMembers": []
+        }
+      ]
+    }
+  ]
+}

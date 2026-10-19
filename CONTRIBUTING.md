@@ -22,3 +22,8 @@ O build executa automaticamente a verificação de sintaxe dos exemplos e da cob
 Essas verificações não substituem revisar assinaturas, opções, comportamento, acessibilidade e apresentação em diferentes telas. Alterações incompatíveis devem corrigir ou remover exemplos antigos na mesma mudança.
 
 Publique somente esta documentação. Não inclua sessões, credenciais, logs, números reais de testes, pacotes privados ou arquivos operacionais. A integração Git do Cloudflare Pages publica commits enviados à branch configurada; confirme o resultado do deploy.
+
+
+## Atualizar o catálogo técnico
+Quando o código-fonte da biblioteca estiver disponível como diretório irmão drax-wa-js, execute `node scripts/catalog.mjs` e depois `node scripts/check.mjs --library`. O inventário enumera módulos, exports locais e membros de protótipos, sem publicar valores de credenciais ou constantes de sessão.
+O build independente deste repositório utiliza o catálogo versionado; não precisa acessar uma sessão ou uma conexão WhatsApp. A referência de EventEmitter deve cobrir todos os métodos herdados identificados pela verificação.

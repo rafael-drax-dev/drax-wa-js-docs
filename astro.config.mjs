@@ -41,6 +41,9 @@ export default defineConfig({
    ]},
    {label:'Referência',items:[
     {label:'API do cliente',slug:'referencia/cliente'},
+    {label:'client.on, once e off',slug:'referencia/eventemitter'},
+    {label:'Imports e extensibilidade',slug:'referencia/caminhos'},
+    {label:'Catálogo dos módulos internos',slug:'referencia/modulos'},
     {label:'Erros e diagnóstico',slug:'referencia/erros'},
     {label:'Compatibilidade e versões',slug:'referencia/versoes'}
    ]}

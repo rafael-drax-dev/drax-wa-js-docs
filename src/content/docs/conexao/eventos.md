@@ -101,3 +101,5 @@ Os métodos `client.on()`, `once()` e `off()` continuam disponíveis para compat
 Notificações adicionais: `version`, `transport:open`, `handshake`, `prekeys:upload`, `prekeys:ready`, `routing` e `sender-key`. Elas não substituem `ready` e normalmente não precisam ser consumidas pela aplicação. Evite registrar seus dados brutos.
 
 Para mensagens, veja [recebimento](/mensagens/recebimento/) e [confirmações](/mensagens/confirmacoes/).
+
+Veja também a [referência completa de client.on(), once() e off()](/referencia/eventemitter/) e o [mapa de imports e módulos](/referencia/caminhos/).

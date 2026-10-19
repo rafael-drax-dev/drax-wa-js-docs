@@ -22,3 +22,8 @@ O Cloudflare Pages está integrado à branch main deste repositório. Enviar um 
 Execute o build antes do push e acompanhe o check Cloudflare Pages no commit. Um push concluído não garante que o deploy passou.
 
 Não publique sessões, logs privados ou pacotes da biblioteca. Consulte [CONTRIBUTING.md](CONTRIBUTING.md) para as regras de sincronização entre API, testes, exemplos e documentação.
+
+
+## Atualizar o catálogo técnico
+Quando o código-fonte da biblioteca estiver disponível como diretório irmão drax-wa-js, execute `node scripts/catalog.mjs` e depois `node scripts/check.mjs --library`. O inventário enumera módulos, exports locais e membros de protótipos, sem publicar valores de credenciais ou constantes de sessão.
+O build independente deste repositório utiliza o catálogo versionado; não precisa acessar uma sessão ou uma conexão WhatsApp. A referência de EventEmitter deve cobrir todos os métodos herdados identificados pela verificação.

@@ -39,6 +39,14 @@ if(process.argv.includes('--library')){
  assert.deepEqual(Object.keys(eventDescriptors).filter(k=>eventDescriptors[k].get).sort(),contract.eventManager.properties);
  for(const name of sample.events.names)assert(texts.some(s=>s.includes('`'+name+'`')),'Evento sem documentação: '+name);
  assert.deepEqual(Object.keys(pkg.exports).sort(),['.','./store']);
+ const {inspectModules}=await import('./catalog.mjs');
+ const storedCatalog=JSON.parse(await read('public/module-catalog.json'));
+ assert.deepEqual(await inspectModules(),storedCatalog,'Catálogo de módulos desatualizado: execute node scripts/catalog.mjs');
+ const emitterReference=await read('src/content/docs/referencia/eventemitter.md');
+ for(const name of storedCatalog.emitterMethods)assert(emitterReference.includes('`'+name+'('),'Método herdado sem documentação: '+name);
+ const moduleReference=await read('src/content/docs/referencia/modulos.md');
+ for(const entry of storedCatalog.modules)assert(moduleReference.includes(entry.path),'Módulo sem documentação: '+entry.path);
+
 }
 if(process.argv.includes('--built')){
  const dist=resolve(root,'dist');const htmls=(await files(dist)).filter(p=>p.endsWith('.html'));
